@@ -1,0 +1,12 @@
+class Open():
+    def __init__(self,file_name):
+        self.file_name = file_name
+        self.file_handler = open(file_name,"r")
+
+    def close(self):
+        print("close file Open")
+        if self.file_handler:
+            self.file_handler.close()
+
+#使用实例
+with contextlib.closing(Open("text.txt")) as file_in:
